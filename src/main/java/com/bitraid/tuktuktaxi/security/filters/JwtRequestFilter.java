@@ -1,8 +1,8 @@
 package com.bitraid.tuktuktaxi.security.filters;
 
 
-import com.kubotoys.inversioneskubotoys.security.services.CustomUserDetailsService;
-import com.kubotoys.inversioneskubotoys.security.util.JwtUtil;
+import com.bitraid.tuktuktaxi.security.services.CustomUserDetailsService;
+import com.bitraid.tuktuktaxi.security.util.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,7 +1,9 @@
 package com.bitraid.tuktuktaxi.security.config;
 
-import com.kubotoys.inversioneskubotoys.security.filters.JwtRequestFilter;
-import com.kubotoys.inversioneskubotoys.security.services.CustomUserDetailsService;
+
+
+import com.bitraid.tuktuktaxi.security.filters.JwtRequestFilter;
+import com.bitraid.tuktuktaxi.security.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

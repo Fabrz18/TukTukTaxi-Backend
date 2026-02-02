@@ -1,10 +1,10 @@
 package com.bitraid.tuktuktaxi.security.services;
 
 
-import com.kubotoys.inversioneskubotoys.security.entities.Role;
-import com.kubotoys.inversioneskubotoys.security.entities.User;
-import com.kubotoys.inversioneskubotoys.security.repository.RoleRepository;
-import com.kubotoys.inversioneskubotoys.security.repository.UserRepository;
+import com.bitraid.tuktuktaxi.security.entities.Role;
+import com.bitraid.tuktuktaxi.security.entities.User;
+import com.bitraid.tuktuktaxi.security.repository.RoleRepository;
+import com.bitraid.tuktuktaxi.security.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
