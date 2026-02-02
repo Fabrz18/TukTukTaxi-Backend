@@ -2,9 +2,11 @@ package com.bitraid.tuktuktaxi.services;
 
 import com.bitraid.tuktuktaxi.dtos.DriverDTO;
 import com.bitraid.tuktuktaxi.interfaces.IDriverService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DriverService implements IDriverService {
     @Override
     public DriverDTO createDriver(DriverDTO driverDTO) {

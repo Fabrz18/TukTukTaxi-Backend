@@ -2,7 +2,11 @@ package com.bitraid.tuktuktaxi.services;
 
 import com.bitraid.tuktuktaxi.dtos.VehicleDTO;
 import com.bitraid.tuktuktaxi.interfaces.IVehicleService;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class VehicleService implements IVehicleService {
     @Override
     public VehicleDTO createVehicle(VehicleDTO vehicle) {
@@ -20,8 +24,8 @@ public class VehicleService implements IVehicleService {
     }
 
     @Override
-    public VehicleDTO getVehicle(Long id) {
-        return null;
+    public List<VehicleDTO> getAllVehicles() {
+        return List.of();
     }
 
     @Override
