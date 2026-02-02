@@ -18,8 +18,8 @@ public class Driver {
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idvehicule", nullable = false)
-    private Vehicule idvehicule;
+    @JoinColumn(name = "idvehicle", nullable = false)
+    private Vehicle idvehicle;
 
     @Column(name = "dni", nullable = false, length = Integer.MAX_VALUE)
     private String dni;
