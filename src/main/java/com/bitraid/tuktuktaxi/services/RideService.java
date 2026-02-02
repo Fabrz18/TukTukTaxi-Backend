@@ -19,7 +19,7 @@ public class RideService implements IRideService {
 
     @Override
     public RideDTO registerRide(RideDTO rideDTO) {
-        if (rideDTO == null) {
+        if (rideDTO.getId() == null) {
             Ride ride = modelMapper.map(rideDTO, Ride.class);
             rideRepository.save(ride);
             return modelMapper.map(ride, RideDTO.class);

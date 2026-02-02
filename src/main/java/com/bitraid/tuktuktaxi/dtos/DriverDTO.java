@@ -19,4 +19,5 @@ public class DriverDTO {
     private String email;
     private Double rate;
     private Double balance;
+    private Boolean status;
 }

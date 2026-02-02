@@ -20,8 +20,9 @@ public class DriverService implements IDriverService {
 
     @Override
     public DriverDTO createDriver(DriverDTO driverDTO) {
-        if (driverDTO == null) {
+        if (driverDTO.getId() == null) {
             Driver driver = modelMapper.map(driverDTO, Driver.class);
+            driver.setStatus(true);
             driverRepository.save(driver);
             return modelMapper.map(driver, DriverDTO.class);
         }
@@ -30,7 +31,7 @@ public class DriverService implements IDriverService {
 
     @Override
     public DriverDTO updateDriver(DriverDTO driverDTO) {
-        if (driverDTO != null) {
+        if (driverDTO.getId() != null) {
             Driver driver = modelMapper.map(driverDTO, Driver.class);
             driverRepository.save(driver);
             return modelMapper.map(driver, DriverDTO.class);
@@ -41,7 +42,8 @@ public class DriverService implements IDriverService {
     @Override
     public void deleteDriver(Long id) {
         if (driverRepository.existsById(id)) {
-            driverRepository.deleteById(id);
+            Driver driver = driverRepository.getOne(id);
+            driver.setStatus(false);
         }
         throw new EntityNotFoundException("Driver with id " + id + " not found");
     }

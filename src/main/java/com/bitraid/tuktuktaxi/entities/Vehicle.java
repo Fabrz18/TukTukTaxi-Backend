@@ -19,5 +19,4 @@ public class Vehicle {
 
     @Column(name = "brand", nullable = false, length = Integer.MAX_VALUE)
     private String brand;
-
 }

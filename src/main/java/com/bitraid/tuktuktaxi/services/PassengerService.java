@@ -21,8 +21,9 @@ public class PassengerService implements IPassengerService {
 
     @Override
     public PassengerDTO createPassenger(PassengerDTO passengerDTO) {
-        if (passengerDTO == null) {
+        if (passengerDTO.getId() == null) {
             Passenger passenger = modelMapper.map(passengerDTO, Passenger.class);
+            passenger.setStatus(true);
             passengerRepository.save(passenger);
             return modelMapper.map(passenger, PassengerDTO.class);
         }
@@ -31,7 +32,7 @@ public class PassengerService implements IPassengerService {
 
     @Override
     public PassengerDTO updatePassenger(PassengerDTO passengerDTO) {
-        if (passengerDTO != null) {
+        if (passengerDTO.getId() != null) {
             Passenger passenger = modelMapper.map(passengerDTO, Passenger.class);
             passengerRepository.save(passenger);
             return modelMapper.map(passenger, PassengerDTO.class);
@@ -42,7 +43,8 @@ public class PassengerService implements IPassengerService {
     @Override
     public void deletePassenger(Long id) {
         if (passengerRepository.existsById(id)) {
-            passengerRepository.deleteById(id);
+            Passenger passenger = passengerRepository.getOne(id);
+            passenger.setStatus(false);
         }
         throw new EntityNotFoundException("Passenger with id " + id + " not found");
     }

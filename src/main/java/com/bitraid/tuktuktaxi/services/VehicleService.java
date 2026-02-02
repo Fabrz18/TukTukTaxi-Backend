@@ -24,7 +24,7 @@ public class VehicleService implements IVehicleService {
 
     @Override
     public VehicleDTO createVehicle(VehicleDTO vehicleDTO) {
-        if (vehicleDTO == null) {
+        if (vehicleDTO.getId() == null) {
             Vehicle vehicle = modelMapper.map(vehicleDTO, Vehicle.class);
             vehicleRepository.save(vehicle);
             return modelMapper.map(vehicle, VehicleDTO.class);
@@ -34,7 +34,7 @@ public class VehicleService implements IVehicleService {
 
     @Override
     public VehicleDTO updateVehicle(VehicleDTO vehicleDTO) {
-        if (vehicleDTO != null) {
+        if (vehicleDTO.getId() != null) {
             Vehicle vehicle = modelMapper.map(vehicleDTO, Vehicle.class);
             vehicleRepository.save(vehicle);
             return modelMapper.map(vehicle, VehicleDTO.class);
