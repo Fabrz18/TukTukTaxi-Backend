@@ -21,7 +21,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         // Este es el punto de entrada al que se conectará Angular
         registry.addEndpoint("/api/ws-yape")
-                .setAllowedOriginPatterns("*") // <--- ESTO FALTA O ESTÁ FALLANDO
+                .setAllowedOriginPatterns("*")
                 .withSockJS();
     }
 }

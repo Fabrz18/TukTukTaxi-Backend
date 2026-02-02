@@ -12,7 +12,7 @@ public class Passenger {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "dni", nullable = false, length = Integer.MAX_VALUE)
     private String dni;
@@ -26,4 +26,6 @@ public class Passenger {
     @Column(name = "email", nullable = false, length = Integer.MAX_VALUE)
     private String email;
 
+    @Column(name = "status", nullable = false)
+    private Boolean status;
 }

@@ -19,7 +19,7 @@ public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idvehicle", nullable = false)
@@ -48,4 +48,6 @@ public class Driver {
     @Column(name = "balance", nullable = false, precision = 10, scale = 2)
     private BigDecimal balance;
 
+    @Column(name = "status", nullable = false)
+    private Boolean status;
 }
