@@ -41,11 +41,11 @@ public class Driver {
     private String email;
 
     @ColumnDefault("5.0")
-    @Column(name = "rate", nullable = false, precision = 3, scale = 1)
+    @Column(name = "rate", nullable = false)
     private Double rate;
 
     @ColumnDefault("0.00")
-    @Column(name = "balance", nullable = false, precision = 10, scale = 2)
+    @Column(name = "balance")
     private Double balance;
 
     @Column(name = "status", nullable = false)

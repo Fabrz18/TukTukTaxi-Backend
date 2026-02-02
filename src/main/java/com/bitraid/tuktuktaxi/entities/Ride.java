@@ -28,14 +28,14 @@ public class Ride {
     @JoinColumn(name = "iddriver", nullable = false)
     private Driver driver;
 
-    @Column(name = "distance", nullable = false, precision = 10, scale = 2)
+    @Column(name = "distance", nullable = false)
     private Double distance;
 
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "date", nullable = false)
     private LocalDateTime date;
 
-    @Column(name = "cost", nullable = false, precision = 10, scale = 2)
+    @Column(name = "cost")
     private Double cost;
 
     @Column(name = "originadrdess", nullable = false, length = Integer.MAX_VALUE)
@@ -56,7 +56,7 @@ public class Ride {
     @Column(name = "destinylong", nullable = false)
     private Double destinyLong;
 
-    @Column(name = "rate", precision = 3, scale = 1)
+    @Column(name = "rate")
     private Double rate;
 
 }
