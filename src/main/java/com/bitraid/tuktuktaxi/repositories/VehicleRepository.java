@@ -1,4 +1,7 @@
 package com.bitraid.tuktuktaxi.repositories;
 
-public class VehicleRepository {
+import com.bitraid.tuktuktaxi.entities.Vehicle;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface VehicleRepository extends JpaRepository<Vehicle,Integer> {
 }
