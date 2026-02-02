@@ -1,4 +1,6 @@
 package com.bitraid.tuktuktaxi.services;
 
-public class PassengerService {
+import com.bitraid.tuktuktaxi.interfaces.IPassengerService;
+
+public class PassengerService implements IPassengerService {
 }

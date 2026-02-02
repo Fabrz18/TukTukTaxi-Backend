@@ -1,8 +1,8 @@
 package com.bitraid.tuktuktaxi.security.controllers;
 
-import com.kubotoys.inversioneskubotoys.security.entities.Role;
-import com.kubotoys.inversioneskubotoys.security.entities.User;
-import com.kubotoys.inversioneskubotoys.security.services.UserService;
+import com.bitraid.tuktuktaxi.security.entities.Role;
+import com.bitraid.tuktuktaxi.security.entities.User;
+import com.bitraid.tuktuktaxi.security.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
