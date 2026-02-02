@@ -1,0 +1,29 @@
+package com.bitraid.tuktuktaxi.entities;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "passenger")
+public class Passenger {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Column(name = "dni", nullable = false, length = Integer.MAX_VALUE)
+    private String dni;
+
+    @Column(name = "fullname", nullable = false, length = Integer.MAX_VALUE)
+    private String fullname;
+
+    @Column(name = "phonenumber", nullable = false, length = Integer.MAX_VALUE)
+    private String phonenumber;
+
+    @Column(name = "email", nullable = false, length = Integer.MAX_VALUE)
+    private String email;
+
+}
