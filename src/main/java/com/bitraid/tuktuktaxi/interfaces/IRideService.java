@@ -6,9 +6,9 @@ import com.bitraid.tuktuktaxi.entities.Ride;
 import java.util.List;
 
 public interface IRideService {
-    RideDTO registerRide(Ride ride);
-    List<RideDTO> listRidesByDriver(Integer driverId);
-    List<RideDTO> listRidesByPassenger(Integer passengerId);
+    RideDTO registerRide(RideDTO rideDTO);
+    List<RideDTO> listRidesByDriver(Long driverId);
+    List<RideDTO> listRidesByPassenger(Long passengerId);
     List<RideDTO> getAllRides();
     List<RideDTO> listRidesByRate(Double rate);
 }

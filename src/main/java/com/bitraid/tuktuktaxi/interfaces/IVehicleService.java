@@ -7,7 +7,7 @@ import java.util.List;
 public interface IVehicleService {
     VehicleDTO createVehicle(VehicleDTO vehicle);
     VehicleDTO updateVehicle(VehicleDTO vehicle);
-    VehicleDTO deleteVehicle(Long id);
+    void deleteVehicle(Long id);
     List<VehicleDTO> getAllVehicles();
-    VehicleDTO getVehicleById(String id);
+    VehicleDTO getVehicleById(Long id);
 }

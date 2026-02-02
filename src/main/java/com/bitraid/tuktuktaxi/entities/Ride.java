@@ -7,6 +7,8 @@ import org.hibernate.annotations.ColumnDefault;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -20,41 +22,41 @@ public class Ride {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idpassenger", nullable = false)
-    private Passenger idpassenger;
+    private Passenger passenger;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "iddriver", nullable = false)
-    private Driver iddriver;
+    private Driver driver;
 
     @Column(name = "distance", nullable = false, precision = 10, scale = 2)
-    private BigDecimal distance;
+    private Double distance;
 
     @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "date", nullable = false)
-    private Instant date;
+    private LocalDateTime date;
 
     @Column(name = "cost", nullable = false, precision = 10, scale = 2)
-    private BigDecimal cost;
+    private Double cost;
 
     @Column(name = "originadrdess", nullable = false, length = Integer.MAX_VALUE)
-    private String originadrdess;
+    private String originAddress;
 
     @Column(name = "originlat", nullable = false)
-    private Double originlat;
+    private Double originLat;
 
     @Column(name = "originlong", nullable = false)
-    private Double originlong;
+    private Double originLong;
 
     @Column(name = "destinityaddress", nullable = false, length = Integer.MAX_VALUE)
-    private String destinityaddress;
+    private String destinityAddress;
 
     @Column(name = "destinylat", nullable = false)
-    private Double destinylat;
+    private Double destinyLat;
 
     @Column(name = "destinylong", nullable = false)
-    private Double destinylong;
+    private Double destinyLong;
 
     @Column(name = "rate", precision = 3, scale = 1)
-    private BigDecimal rate;
+    private Double rate;
 
 }

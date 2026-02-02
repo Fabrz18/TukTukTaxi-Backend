@@ -23,30 +23,30 @@ public class Driver {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "idvehicle", nullable = false)
-    private Vehicle idvehicle;
+    private Vehicle vehicle;
 
     @Column(name = "dni", nullable = false, length = Integer.MAX_VALUE)
     private String dni;
 
     @Column(name = "fullname", nullable = false, length = Integer.MAX_VALUE)
-    private String fullname;
+    private String fullName;
 
     @Column(name = "bikeplate", nullable = false, length = Integer.MAX_VALUE)
-    private String bikeplate;
+    private String bikePlate;
 
     @Column(name = "phonenumber", nullable = false, length = Integer.MAX_VALUE)
-    private String phonenumber;
+    private String phoneNumber;
 
     @Column(name = "email", nullable = false, length = Integer.MAX_VALUE)
     private String email;
 
     @ColumnDefault("5.0")
     @Column(name = "rate", nullable = false, precision = 3, scale = 1)
-    private BigDecimal rate;
+    private Double rate;
 
     @ColumnDefault("0.00")
     @Column(name = "balance", nullable = false, precision = 10, scale = 2)
-    private BigDecimal balance;
+    private Double balance;
 
     @Column(name = "status", nullable = false)
     private Boolean status;

@@ -10,9 +10,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PassengerDTO {
-    private Integer id;
+    private Long id;
     private String dni;
-    private String fullname;
-    private String phonenumber;
+    private String fullName;
+    private String phoneNumber;
     private String email;
 }

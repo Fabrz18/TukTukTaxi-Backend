@@ -18,10 +18,10 @@ public class Passenger {
     private String dni;
 
     @Column(name = "fullname", nullable = false, length = Integer.MAX_VALUE)
-    private String fullname;
+    private String fullName;
 
     @Column(name = "phonenumber", nullable = false, length = Integer.MAX_VALUE)
-    private String phonenumber;
+    private String phoneNumber;
 
     @Column(name = "email", nullable = false, length = Integer.MAX_VALUE)
     private String email;
