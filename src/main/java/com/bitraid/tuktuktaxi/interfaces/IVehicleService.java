@@ -2,10 +2,12 @@ package com.bitraid.tuktuktaxi.interfaces;
 
 import com.bitraid.tuktuktaxi.dtos.VehicleDTO;
 
+import java.util.List;
+
 public interface IVehicleService {
     VehicleDTO createVehicle(VehicleDTO vehicle);
     VehicleDTO updateVehicle(VehicleDTO vehicle);
     VehicleDTO deleteVehicle(Long id);
-    VehicleDTO getVehicle(Long id);
+    List<VehicleDTO> getAllVehicles();
     VehicleDTO getVehicleById(String id);
 }

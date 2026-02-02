@@ -5,9 +5,9 @@ import com.bitraid.tuktuktaxi.dtos.DriverDTO;
 import java.util.List;
 
 public interface IDriverService {
-    public DriverDTO createDriver(DriverDTO driverDTO);
-    public DriverDTO updateDriver(DriverDTO driverDTO);
-    public Integer deleteDriver(Integer id);
-    public List<DriverDTO> getAllDrivers();
-    public DriverDTO getDriverById(Integer id);
+    DriverDTO createDriver(DriverDTO driverDTO);
+    DriverDTO updateDriver(DriverDTO driverDTO);
+    Integer deleteDriver(Integer id);
+    List<DriverDTO> getAllDrivers();
+    DriverDTO getDriverById(Integer id);
 }
