@@ -4,6 +4,7 @@ import com.bitraid.tuktuktaxi.dtos.VehicleDTO;
 import com.bitraid.tuktuktaxi.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,18 +16,21 @@ public class VehicleController {
     private VehicleService vehicleService;
 
     @PostMapping("/register")
+    @PreAuthorize("hasAnyRole('CONDUCTOR')")
     public ResponseEntity<VehicleDTO> createVehicle(@RequestBody VehicleDTO vehicleDTO) {
         VehicleDTO newVehicle = vehicleService.createVehicle(vehicleDTO);
         return ResponseEntity.ok(newVehicle);
     }
 
     @PutMapping("/update")
+    @PreAuthorize("hasAnyRole('CONDUCTOR')")
     public ResponseEntity<VehicleDTO> updateVehicle(@RequestBody VehicleDTO vehicleDTO) {
         VehicleDTO updatedVehicle = vehicleService.updateVehicle(vehicleDTO);
         return ResponseEntity.ok(updatedVehicle);
     }
 
     @GetMapping("/list/{id}")
+    @PreAuthorize("hasAnyRole('CONDUCTOR')")
     public ResponseEntity<VehicleDTO> getVehicleById(@PathVariable Long id) {
         VehicleDTO vehicle = vehicleService.getVehicleById(id);
         if (vehicle == null) {
@@ -36,6 +40,7 @@ public class VehicleController {
     }
 
     @GetMapping("/listall")
+    @PreAuthorize("hasAnyRole('CONDUCTOR')")
     public ResponseEntity<List<VehicleDTO>> getAllVehicles() {
         List<VehicleDTO> vehicles = vehicleService.getAllVehicles();
         if (vehicles.isEmpty()) {
@@ -45,6 +50,7 @@ public class VehicleController {
     }
 
     @DeleteMapping("/delete/{id}")
+    @PreAuthorize("hasAnyRole('CONDUCTOR')")
     public void deleteVehicle(@PathVariable Long id) {
         vehicleService.deleteVehicle(id);
 

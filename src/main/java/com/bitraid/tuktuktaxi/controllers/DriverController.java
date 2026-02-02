@@ -5,6 +5,7 @@ import com.bitraid.tuktuktaxi.services.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,12 +22,14 @@ public class DriverController {
         }
 
         @PutMapping("/update")
+        @PreAuthorize("hasRole('CONDUCTOR')")
         public ResponseEntity<DriverDTO> updateDriver(@RequestBody DriverDTO driverDTO) {
             DriverDTO updatedDriver = driverService.updateDriver(driverDTO);
             return ResponseEntity.ok(updatedDriver);
         }
 
         @GetMapping("/list/{id}")
+        @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
         public ResponseEntity<DriverDTO> getDriverById(@PathVariable Long id) {
             DriverDTO driver = driverService.getDriverById(id);
             if (driver == null) {
@@ -36,6 +39,7 @@ public class DriverController {
         }
 
         @GetMapping("/listall")
+        @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
         public ResponseEntity<List<DriverDTO>> getAllDrivers() {
             List<DriverDTO> drivers = driverService.getAllDrivers();
             if (drivers.isEmpty()) {
@@ -45,6 +49,7 @@ public class DriverController {
         }
 
         @DeleteMapping("/delete/{id}")
+        @PreAuthorize("hasAnyRole('CONDUCTOR')")
         public void deleteDriver(@PathVariable Long id) {
             driverService.deleteDriver(id);
         }

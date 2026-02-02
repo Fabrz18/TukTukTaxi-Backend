@@ -4,6 +4,7 @@ import com.bitraid.tuktuktaxi.dtos.PassengerDTO;
 import com.bitraid.tuktuktaxi.services.PassengerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,12 +22,14 @@ public class PassengerController {
     }
 
     @PutMapping("/update")
+    @PreAuthorize("hasRole('PASAJERO')")
     public ResponseEntity<PassengerDTO> updatePassenger(@RequestBody PassengerDTO passengerDTO) {
         PassengerDTO updatedPassenger = passengerService.updatePassenger(passengerDTO);
         return ResponseEntity.ok(updatedPassenger);
     }
 
     @GetMapping("/list/{id}")
+    @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
     public ResponseEntity<PassengerDTO> getPassengerById(@PathVariable Long id) {
         PassengerDTO passenger = passengerService.getPassengerById(id);
         if (passenger == null) {
@@ -36,6 +39,7 @@ public class PassengerController {
     }
 
     @GetMapping("/listall")
+    @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
     public ResponseEntity<List<PassengerDTO>> getAllPassengers() {
         List<PassengerDTO> passengers = passengerService.getAllPassengers();
         if (passengers.isEmpty()) {
@@ -45,6 +49,7 @@ public class PassengerController {
     }
 
     @DeleteMapping("/delete/{id}")
+    @PreAuthorize("hasAnyRole('PASAJERO')")
     public void deletePassenger(@PathVariable Long id) {
         passengerService.deletePassenger(id);
     }

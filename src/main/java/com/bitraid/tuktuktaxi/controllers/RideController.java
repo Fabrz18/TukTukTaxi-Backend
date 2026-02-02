@@ -4,6 +4,7 @@ import com.bitraid.tuktuktaxi.dtos.RideDTO;
 import com.bitraid.tuktuktaxi.services.RideService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class RideController {
     private RideService rideService;
 
     @PostMapping("/register")
+    @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
     public ResponseEntity<RideDTO> registerRide(@RequestBody RideDTO rideDTO) {
         // Asumiendo que tu servicio transforma el DTO a Entity internamente
         RideDTO newRide = rideService.registerRide(rideDTO);
@@ -22,6 +24,7 @@ public class RideController {
     }
 
     @GetMapping("/list/driver/{driverId}")
+    @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
     public ResponseEntity<List<RideDTO>> listRidesByDriver(@PathVariable Long driverId) {
         List<RideDTO> rides = rideService.listRidesByDriver(driverId);
         if (rides.isEmpty()) {
@@ -31,6 +34,7 @@ public class RideController {
     }
 
     @GetMapping("/list/passenger/{passengerId}")
+    @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
     public ResponseEntity<List<RideDTO>> listRidesByPassenger(@PathVariable Long passengerId) {
         List<RideDTO> rides = rideService.listRidesByPassenger(passengerId);
         if (rides.isEmpty()) {
@@ -40,6 +44,7 @@ public class RideController {
     }
 
     @GetMapping("/listall")
+    @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
     public ResponseEntity<List<RideDTO>> getAllRides() {
         List<RideDTO> rides = rideService.getAllRides();
         if (rides.isEmpty()) {
@@ -49,6 +54,7 @@ public class RideController {
     }
 
     @GetMapping("/list/rate/{rate}")
+    @PreAuthorize("hasAnyRole('CONDUCTOR', 'PASAJERO')")
     public ResponseEntity<List<RideDTO>> listRidesByRate(@PathVariable Double rate) {
         List<RideDTO> rides = rideService.listRidesByRate(rate);
         if (rides.isEmpty()) {
