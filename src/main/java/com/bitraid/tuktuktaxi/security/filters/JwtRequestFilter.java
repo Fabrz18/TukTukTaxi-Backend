@@ -30,7 +30,13 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
         String path = request.getRequestURI();
-        if (path.startsWith("/api/authenticate") || path.startsWith("/api/productos") ||  request.getMethod().equalsIgnoreCase("OPTIONS")) {
+        if (
+                path.startsWith("/api/authenticate") ||
+                        path.startsWith("/api/passenger/register") ||
+                        path.startsWith("/api/driver/register") ||
+                        path.startsWith("/api/productos") ||
+                        request.getMethod().equalsIgnoreCase("OPTIONS")
+        ) {
             chain.doFilter(request, response);
             return;
         }

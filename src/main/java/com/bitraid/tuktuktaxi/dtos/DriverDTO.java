@@ -1,5 +1,6 @@
 package com.bitraid.tuktuktaxi.dtos;
 
+import com.bitraid.tuktuktaxi.entities.Vehicle;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class DriverDTO {
     private Long id;
-    private Long vehicle;
+    private Vehicle vehicle;
     private String password;
     private String fullName;
     private String dni;

@@ -65,6 +65,9 @@ public class SecurityConfig {
                         .requestMatchers("/ws-yape/**").permitAll()
                         .requestMatchers("/api/ws-yape/**").permitAll()
                         .requestMatchers("/error").permitAll()
+                        .requestMatchers("/api/driver/register").permitAll()
+                        .requestMatchers("/api/passenger/register").permitAll()
+                        .requestMatchers("/api/vehicle/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
