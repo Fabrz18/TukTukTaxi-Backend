@@ -43,7 +43,7 @@ public class PassengerService implements IPassengerService {
 
             Role rol =  new Role();
             rol.setId(1L);
-            rol.setName("ROLE_CONDUCTOR");
+            rol.setName("ROLE_PASSENGER");
 
             // Asumiendo que tu entidad User tiene una lista de roles
             user.setRoles(Collections.singleton(rol));
