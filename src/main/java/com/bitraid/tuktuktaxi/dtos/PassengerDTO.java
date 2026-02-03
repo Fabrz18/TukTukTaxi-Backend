@@ -14,6 +14,7 @@ public class PassengerDTO {
     private String dni;
     private String fullName;
     private String phoneNumber;
+    private String password;
     private String email;
     private Boolean status;
 }

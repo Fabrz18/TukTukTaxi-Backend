@@ -1,6 +1,8 @@
 package com.bitraid.tuktuktaxi.entities;
 
+import com.bitraid.tuktuktaxi.security.entities.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,6 +38,9 @@ public class Driver {
 
     @Column(name = "phonenumber", nullable = false, length = Integer.MAX_VALUE)
     private String phoneNumber;
+
+    @Column(name = "password", nullable = false)
+    private String password;
 
     @Column(name = "email", nullable = false, length = Integer.MAX_VALUE)
     private String email;

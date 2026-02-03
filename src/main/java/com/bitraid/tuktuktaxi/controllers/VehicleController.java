@@ -40,7 +40,6 @@ public class VehicleController {
     }
 
     @GetMapping("/listall")
-    @PreAuthorize("hasAnyRole('CONDUCTOR')")
     public ResponseEntity<List<VehicleDTO>> getAllVehicles() {
         List<VehicleDTO> vehicles = vehicleService.getAllVehicles();
         if (vehicles.isEmpty()) {

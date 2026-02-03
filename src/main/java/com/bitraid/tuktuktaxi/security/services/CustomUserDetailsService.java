@@ -3,7 +3,6 @@ package com.bitraid.tuktuktaxi.security.services;
 
 import com.bitraid.tuktuktaxi.security.entities.User;
 import com.bitraid.tuktuktaxi.security.repository.UserRepository;
-import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -23,6 +23,9 @@ public class Passenger {
     @Column(name = "phonenumber", nullable = false, length = Integer.MAX_VALUE)
     private String phoneNumber;
 
+    @Column(name = "password", nullable = false)
+    private String password;
+
     @Column(name = "email", nullable = false, length = Integer.MAX_VALUE)
     private String email;
 
