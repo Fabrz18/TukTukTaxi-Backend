@@ -33,7 +33,7 @@ public class DriverService implements IDriverService {
     @Override
     public DriverDTO createDriver(DriverDTO driverDTO) {
         User user = new User();
-        if (driverRepository.findByEmail(driverDTO.getEmail())) {
+        if (driverRepository.existsByEmail(driverDTO.getEmail())) {
             System.out.println("Driver email already exists");
             return null;
         }
