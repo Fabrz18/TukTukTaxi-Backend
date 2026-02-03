@@ -57,14 +57,9 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/productos/**").permitAll()
-                        .requestMatchers("/api/categorias/**").permitAll()
-                        .requestMatchers("/api/authenticate").permitAll()
-                        .requestMatchers("/api/configuracion").permitAll()
-                        .requestMatchers("/api/webhook/**").permitAll()
-                        .requestMatchers("/ws-yape/**").permitAll()
-                        .requestMatchers("/api/ws-yape/**").permitAll()
-                        .requestMatchers("/error").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/vehicle/**").permitAll()
+                        .requestMatchers("/api/vehicle/listall").permitAll()
+                        .requestMatchers("/api/authenticate", "/error").permitAll()
                         .requestMatchers("/api/driver/register").permitAll()
                         .requestMatchers("/api/passenger/register").permitAll()
                         .requestMatchers("/api/vehicle/**").permitAll()

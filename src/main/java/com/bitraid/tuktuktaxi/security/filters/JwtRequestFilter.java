@@ -35,6 +35,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                         path.startsWith("/api/passenger/register") ||
                         path.startsWith("/api/driver/register") ||
                         path.startsWith("/api/productos") ||
+                        path.startsWith("/api/vehicles/listall") ||
                         request.getMethod().equalsIgnoreCase("OPTIONS")
         ) {
             chain.doFilter(request, response);

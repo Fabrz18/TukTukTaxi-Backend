@@ -33,6 +33,10 @@ public class DriverService implements IDriverService {
     @Override
     public DriverDTO createDriver(DriverDTO driverDTO) {
         User user = new User();
+        if (driverRepository.findByEmail(driverDTO.getEmail())) {
+            System.out.println("Driver email already exists");
+            return null;
+        }
         if (driverDTO.getId() == null) {
             Driver driver = modelMapper.map(driverDTO, Driver.class);
             driver.setStatus(true);
@@ -45,6 +49,7 @@ public class DriverService implements IDriverService {
             Role rol =  new Role();
             rol.setId(2L);
             rol.setName("ROLE_CONDUCTOR");
+
 
             // Asumiendo que tu entidad User tiene una lista de roles
             user.setRoles(Collections.singleton(rol));
